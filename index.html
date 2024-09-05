@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script
+      src="https://kit.fontawesome.com/d6c8bd95ac.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.min.css" />
+    <title>WebApp Tasks</title>
+  </head>
+  <body>
+    <div class="general-wrapper">
+      <div class="form-container">
+        <h2>Criar/Manipular Tarefa</h2>
+        <div class="task-form-wrapper">
+          <div class="input-line">
+            <label for="taskName">Nome da tarefa</label>
+            <input type="text" name="taskName" id="taskName" />
+          </div>
+          <div class="input-line">
+            <label for="taskDescription">Descrição da tarefa</label>
+            <textarea name="taskDescription" id="taskDescription"></textarea>
+          </div>
+          <div class="input-line">
+            <label for="taskDate">Data de vencimento</label>
+            <input type="date" name="taskDate" id="taskDate" />
+          </div>
+          <div class="input-line">
+            <label for="taskStatus">Status</label>
+            <input type="text" name="taskStatus" id="taskStatus" disabled />
+          </div>
+        </div>
+        <div class="actions">
+          <button id="addTaskBtn"><i class="fa-solid fa-plus"></i></button>
+          <button id="saveEditBtn">
+            <i class="fa-solid fa-floppy-disk"></i>
+          </button>
+          <button id="removeTaskBtn"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="tasklist-container">
+        <h2>Lista de Tarefas</h2>
+        <div class="tasklist-container__list">
+          <!-- <div class="task-item">
+            <div class="task-item__header">
+              <div class="checkbox-task">
+                <input type="checkbox" name="checkTask" id="checkTask" />
+                <label for="checkTask"></label>
+              </div>
+              <h2>Nome da tarefa</h2>
+              <p>01-01-2024</p>
+              <button class="dropdown-task">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+          </div> -->
+
+          <!-- <div class="task-item expanded">
+            <div class="task-item__header">
+              <div class="checkbox-task">
+                <input type="checkbox" name="checkTask" id="checkTask" />
+                <label for="checkTask"></label>
+              </div>
+              <h2>Nome da tarefa</h2>
+              <p>01-01-2024</p>
+              <button class="dropdown-task">
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="task-item__body">
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
+                vel corporis hic laboriosam accusamus nam nobis, aliquam,
+                commodi, omnis quia molestias quam enim ab exercitationem
+                expedita tenetur iure. Ratione, eveniet?
+              </p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+// out: style.min.css
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Urbanist", sans-serif;
+}
+
+.general-wrapper {
+  margin: 50px auto;
+  width: 1200px;
+  height: 760px;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.18);
+  box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.18);
+  display: flex;
+
+  .form-container,
+  .tasklist-container {
+    height: 100%;
+    width: 50%;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 1.2em;
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .form-container {
+    padding: 30px 78px;
+
+    h2 {
+      margin-bottom: 33px;
+      color: #287671;
+    }
+
+    .task-form-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 15px 0;
+
+      .input-line:not(:last-of-type) {
+        input,
+        textarea {
+          &:hover,
+          &:focus {
+            outline-color: #287671;
+          }
+        }
+      }
+
+      .input-line {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px 0;
+
+        label {
+          font-size: 18px;
+          line-height: 1.2em;
+          color: #226460;
+          font-weight: 400;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          font-size: 17px;
+          line-height: 1.3em;
+          color: #333;
+          font-weight: normal;
+          border: 1px solid #287671;
+          border-radius: 8px;
+          background: transparent;
+          padding-left: 10px;
+          padding-right: 10px;
+          outline: 1px solid transparent;
+          transition: 0.15s;
+        }
+
+        input {
+          height: 40px;
+        }
+
+        textarea {
+          min-height: 150px;
+          resize: none;
+          padding-top: 7px;
+        }
+      }
+    }
+
+    .actions {
+      margin-top: 17px;
+      display: flex;
+      gap: 0 10px;
+      button {
+        margin: 0;
+        width: 55px;
+        height: 35px;
+        border: 2px solid transparent;
+        border-radius: 3px;
+        transition: 0.3s;
+        cursor: pointer;
+
+        i {
+          color: white;
+          font-size: 23px;
+        }
+      }
+
+      button#addTaskBtn {
+        background: #1b7640;
+        border-color: $background;
+
+        &:hover {
+          background: transparent;
+          i {
+            color: #1b7640;
+          }
+        }
+      }
+      button#saveEditBtn {
+        background: #0e48b6;
+        border-color: $background;
+
+        &:hover {
+          background: transparent;
+          i {
+            color: #0e48b6;
+          }
+        }
+      }
+      button#removeTaskBtn {
+        background: #a22121;
+        border-color: $background;
+
+        &:hover {
+          background: transparent;
+          i {
+            color: #a22121;
+          }
+        }
+      }
+    }
+  }
+
+  .tasklist-container {
+    background: #287671;
+    padding: 30px 45px;
+
+    h2 {
+      color: white;
+      margin-bottom: 47px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px 0;
+      .checkbox-task {
+        padding-bottom: 2px;
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        label {
+          display: block;
+          height: 25px;
+          width: 25px;
+          position: relative;
+          cursor: pointer;
+        }
+
+        label::before {
+          content: "";
+          display: block;
+          width: 23px;
+          height: 23px;
+          border-radius: 50%;
+          background: transparent;
+          border: 2px solid white;
+          position: absolute;
+        }
+
+        label:after {
+          content: "✔";
+          display: block;
+          opacity: 0;
+          color: #287671;
+          width: 25px;
+          height: 25px;
+          background: white;
+          border-radius: 50%;
+          text-align: center;
+          font-size: 17px;
+          position: absolute;
+          transition: 0.12s;
+        }
+
+        input[type="checkbox"]:checked + label:after {
+          opacity: 1;
+        }
+      }
+
+      .task-item {
+        background: #0f645d;
+        height: fit-content;
+        min-height: 54px;
+        padding: 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover,
+        &.selected {
+          background: #09433e;
+        }
+
+        &__header {
+          display: flex;
+          align-items: center;
+          h2 {
+            font-size: 19px;
+            line-height: 1.2em;
+            color: white;
+            font-weight: 600;
+            margin: 0;
+            margin-left: 7px;
+            margin-right: 15px;
+            flex: 1;
+            text-align-last: left;
+          }
+
+          p {
+            font-size: 18px;
+            line-height: 1.2em;
+            color: white;
+            font-weight: 300;
+            margin-right: 15px;
+
+            &.due-date {
+              color: rgb(218, 124, 124);
+            }
+          }
+
+          button.dropdown-task {
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            padding-bottom: 2px;
+            transition: transform 0.5s;
+
+            i {
+              font-size: 24px;
+              color: #287671;
+              transition: 0.12s;
+            }
+
+            &:hover {
+              i {
+                color: #40a29c;
+              }
+            }
+          }
+        }
+
+        &__body {
+          border-top: 1px solid #5e9895;
+          margin-top: 12px;
+          padding-top: 12px;
+          display: none;
+
+          p {
+            font-size: 16px;
+            line-height: 1.3em;
+            color: white;
+            opacity: 0.8;
+            font-weight: 300;
+          }
+        }
+
+        &.expanded {
+          .task-item__header {
+            button.dropdown-task {
+              transform: rotate(180deg);
+            }
+          }
+
+          .task-item__body {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

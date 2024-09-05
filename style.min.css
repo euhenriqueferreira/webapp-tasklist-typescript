@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Urbanist", sans-serif;
+}
+.general-wrapper {
+  margin: 50px auto;
+  width: 1200px;
+  height: 760px;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.18);
+  box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.18);
+  display: flex;
+}
+.general-wrapper .form-container,
+.general-wrapper .tasklist-container {
+  height: 100%;
+  width: 50%;
+}
+.general-wrapper h2 {
+  font-size: 30px;
+  line-height: 1.2em;
+  text-align: center;
+  font-weight: 800;
+}
+.general-wrapper .form-container {
+  padding: 30px 78px;
+}
+.general-wrapper .form-container h2 {
+  margin-bottom: 33px;
+  color: #287671;
+}
+.general-wrapper .form-container .task-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px 0;
+}
+.general-wrapper .form-container .task-form-wrapper .input-line:not(:last-of-type) input:hover,
+.general-wrapper .form-container .task-form-wrapper .input-line:not(:last-of-type) textarea:hover,
+.general-wrapper .form-container .task-form-wrapper .input-line:not(:last-of-type) input:focus,
+.general-wrapper .form-container .task-form-wrapper .input-line:not(:last-of-type) textarea:focus {
+  outline-color: #287671;
+}
+.general-wrapper .form-container .task-form-wrapper .input-line {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px 0;
+}
+.general-wrapper .form-container .task-form-wrapper .input-line label {
+  font-size: 18px;
+  line-height: 1.2em;
+  color: #226460;
+  font-weight: 400;
+}
+.general-wrapper .form-container .task-form-wrapper .input-line input,
+.general-wrapper .form-container .task-form-wrapper .input-line textarea {
+  width: 100%;
+  font-size: 17px;
+  line-height: 1.3em;
+  color: #333;
+  font-weight: normal;
+  border: 1px solid #287671;
+  border-radius: 8px;
+  background: transparent;
+  padding-left: 10px;
+  padding-right: 10px;
+  outline: 1px solid transparent;
+  transition: 0.15s;
+}
+.general-wrapper .form-container .task-form-wrapper .input-line input {
+  height: 40px;
+}
+.general-wrapper .form-container .task-form-wrapper .input-line textarea {
+  min-height: 150px;
+  resize: none;
+  padding-top: 7px;
+}
+.general-wrapper .form-container .actions {
+  margin-top: 17px;
+  display: flex;
+  gap: 0 10px;
+}
+.general-wrapper .form-container .actions button {
+  margin: 0;
+  width: 55px;
+  height: 35px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.general-wrapper .form-container .actions button i {
+  color: white;
+  font-size: 23px;
+}
+.general-wrapper .form-container .actions button#addTaskBtn {
+  background: #1b7640;
+  border-color: #1b7640;
+}
+.general-wrapper .form-container .actions button#addTaskBtn:hover {
+  background: transparent;
+}
+.general-wrapper .form-container .actions button#addTaskBtn:hover i {
+  color: #1b7640;
+}
+.general-wrapper .form-container .actions button#saveEditBtn {
+  background: #0e48b6;
+  border-color: #0e48b6;
+}
+.general-wrapper .form-container .actions button#saveEditBtn:hover {
+  background: transparent;
+}
+.general-wrapper .form-container .actions button#saveEditBtn:hover i {
+  color: #0e48b6;
+}
+.general-wrapper .form-container .actions button#removeTaskBtn {
+  background: #a22121;
+  border-color: #a22121;
+}
+.general-wrapper .form-container .actions button#removeTaskBtn:hover {
+  background: transparent;
+}
+.general-wrapper .form-container .actions button#removeTaskBtn:hover i {
+  color: #a22121;
+}
+.general-wrapper .tasklist-container {
+  background: #287671;
+  padding: 30px 45px;
+}
+.general-wrapper .tasklist-container h2 {
+  color: white;
+  margin-bottom: 47px;
+}
+.general-wrapper .tasklist-container__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0;
+}
+.general-wrapper .tasklist-container__list .checkbox-task {
+  padding-bottom: 2px;
+}
+.general-wrapper .tasklist-container__list .checkbox-task input[type="checkbox"] {
+  display: none;
+}
+.general-wrapper .tasklist-container__list .checkbox-task label {
+  display: block;
+  height: 25px;
+  width: 25px;
+  position: relative;
+  cursor: pointer;
+}
+.general-wrapper .tasklist-container__list .checkbox-task label::before {
+  content: "";
+  display: block;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid white;
+  position: absolute;
+}
+.general-wrapper .tasklist-container__list .checkbox-task label:after {
+  content: "✔";
+  display: block;
+  opacity: 0;
+  color: #287671;
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 17px;
+  position: absolute;
+  transition: 0.12s;
+}
+.general-wrapper .tasklist-container__list .checkbox-task input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+.general-wrapper .tasklist-container__list .task-item {
+  background: #0f645d;
+  height: fit-content;
+  min-height: 54px;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.general-wrapper .tasklist-container__list .task-item:hover,
+.general-wrapper .tasklist-container__list .task-item.selected {
+  background: #09433e;
+}
+.general-wrapper .tasklist-container__list .task-item__header {
+  display: flex;
+  align-items: center;
+}
+.general-wrapper .tasklist-container__list .task-item__header h2 {
+  font-size: 19px;
+  line-height: 1.2em;
+  color: white;
+  font-weight: 600;
+  margin: 0;
+  margin-left: 7px;
+  margin-right: 15px;
+  flex: 1;
+  text-align-last: left;
+}
+.general-wrapper .tasklist-container__list .task-item__header p {
+  font-size: 18px;
+  line-height: 1.2em;
+  color: white;
+  font-weight: 300;
+  margin-right: 15px;
+}
+.general-wrapper .tasklist-container__list .task-item__header p.due-date {
+  color: #da7c7c;
+}
+.general-wrapper .tasklist-container__list .task-item__header button.dropdown-task {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding-bottom: 2px;
+  transition: transform 0.5s;
+}
+.general-wrapper .tasklist-container__list .task-item__header button.dropdown-task i {
+  font-size: 24px;
+  color: #287671;
+  transition: 0.12s;
+}
+.general-wrapper .tasklist-container__list .task-item__header button.dropdown-task:hover i {
+  color: #40a29c;
+}
+.general-wrapper .tasklist-container__list .task-item__body {
+  border-top: 1px solid #5e9895;
+  margin-top: 12px;
+  padding-top: 12px;
+  display: none;
+}
+.general-wrapper .tasklist-container__list .task-item__body p {
+  font-size: 16px;
+  line-height: 1.3em;
+  color: white;
+  opacity: 0.8;
+  font-weight: 300;
+}
+.general-wrapper .tasklist-container__list .task-item.expanded .task-item__header button.dropdown-task {
+  transform: rotate(180deg);
+}
+.general-wrapper .tasklist-container__list .task-item.expanded .task-item__body {
+  display: block;
+}
